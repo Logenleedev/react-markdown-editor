@@ -11,14 +11,23 @@ import styles from "./App.module.css";
 
 export default function App() {
     const [note, setNote] = React.useState(data);
-    const [currentNote, setCurrentNote] = React.useState();
+    const [currentNoteID, setCurrentNoteID] = React.useState();
 
-    
+
 
 
     function createNewNote(){
 
     }
+
+    function findCurrentNote() {
+      
+      return note.find(note => {
+          return note.id == currentNoteID
+      }) || note[0]
+
+
+  }
 
     function setUpCurrentNote(){
 
@@ -36,9 +45,13 @@ export default function App() {
             <Sidebar 
               note={note}
               createNewNote= {createNewNote}
-              currentNote = {setUpCurrentNote}
+              setCurrentNoteID={setCurrentNoteID}
             />
-            <Editor />
+
+            <Editor 
+              currentNote={findCurrentNote()}
+
+            />
 
         </Split>
       </div>

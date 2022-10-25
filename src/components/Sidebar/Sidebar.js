@@ -6,11 +6,13 @@ import Button from '@mui/material/Button';
 
 export default function Sidebar(props) {
 
+   
+
     const noteElement =  props.note.map((item, index) => {
         return (
-            <div key={item.id} className={styles["sidebar--note-box"]}>
+            <div key={item.id} className={styles["sidebar--note-box"]} onClick={()=>props.setCurrentNoteID(item.id)}>
                 <h4>Note {index + 1}</h4>
-                <p></p>
+                <p>{item.body.slice(0, 10) + "..."}</p>
             </div>
         )
     })
