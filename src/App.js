@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Sidebar from "./components/Sidebar/Sidebar";
+import Editor from "./components/Editor/Editor";
+import { data } from "./data";
+import Split from "react-split";
+import {nanoid} from "nanoid";
+import styles from "./App.module.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+
+
+
+export default function App() {
+    const [note, setNote] = React.useState(data);
+    const [currentNote, setCurrentNote] = React.useState();
+
+    
+
+
+    function createNewNote(){
+
+    }
+
+    function setUpCurrentNote(){
+
+
+    }
+    return (
+        
+      <div>
+        <Split
+            sizes={[35, 65]}
+            className={styles["split_container"]}
+            direction="horizontal"
+            
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+            <Sidebar 
+              note={note}
+              createNewNote= {createNewNote}
+              currentNote = {setUpCurrentNote}
+            />
+            <Editor />
 
-export default App;
+        </Split>
+      </div>
+    )
+}
