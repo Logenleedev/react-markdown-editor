@@ -45,6 +45,7 @@ export default function App() {
             <Sidebar 
               note={note}
               createNewNote= {createNewNote}
+              currentNote={findCurrentNote()}
               setCurrentNoteID={setCurrentNoteID}
             />
 
