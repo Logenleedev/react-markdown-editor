@@ -21,7 +21,7 @@ export default function Editor(props) {
 
             <ReactMde
                 value={props.currentNote.body}
-                // onChange={props.}
+                onChange={props.updateNote}
                 selectedTab={selectedTab}
                 onTabChange={setSelectedTab}
                 generateMarkdownPreview={markdown =>

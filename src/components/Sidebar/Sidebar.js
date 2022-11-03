@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 
 export default function Sidebar(props) {
 
-    console.log(props.currentNote)
+    // console.log(props.currentNote)
 
     const noteElement =  props.note.map((item, index) => {
         return (
@@ -22,7 +22,7 @@ export default function Sidebar(props) {
         <div>
             <div className={styles["sidebar--newnote-container"]}>
                 <h1>New Note</h1>
-                <Button variant="contained">+</Button>
+                <Button variant="contained" onClick={props.createNewNote}>+</Button>
              </div>
             {noteElement}
         </div>

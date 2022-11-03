@@ -17,7 +17,8 @@ export default function App() {
 
 
     function createNewNote(){
-
+      const random_id = nanoid();
+      setNote(oldNotes => [...oldNotes, {id: random_id, body: "please enter your note"}]);
     }
 
     function findCurrentNote() {
@@ -29,9 +30,13 @@ export default function App() {
 
   }
 
-    function setUpCurrentNote(){
+    function updateNote(text){
 
-
+      setNote(oldNotes => oldNotes.map(oldNote => {
+        return oldNote.id === currentNoteID
+            ? { ...oldNote, body: text }
+            : oldNote
+    }))
     }
     return (
         
@@ -51,7 +56,7 @@ export default function App() {
 
             <Editor 
               currentNote={findCurrentNote()}
-
+              updateNote={updateNote}
             />
 
         </Split>
