@@ -1,11 +1,13 @@
 .sidebar--newnote-container{
     display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .sidebar--note-box {
     display: inline-block;
     color: palevioletred;
-    width: 40%;
+    width: 80%;
     font-size: 1em;
     margin: 1em;
     padding: 0.25em 1em;
@@ -18,11 +20,19 @@
     display: inline-block;
     color: white;
     background-color: palevioletred;
-    width: 40%;
+    width: 80%;
     font-size: 1em;
     margin: 1em;
     padding: 0.25em 1em;
     border: 2px solid palevioletred;
     border-radius: 3px;
     display: block;
+}
+
+.sidebar--newnote-button {
+    width: 30px;
+}
+
+.sidebar--newnote-container h1 {
+    color: palevioletred;
 }

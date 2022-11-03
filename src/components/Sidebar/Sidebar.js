@@ -22,7 +22,7 @@ export default function Sidebar(props) {
         <div>
             <div className={styles["sidebar--newnote-container"]}>
                 <h1>New Note</h1>
-                <Button variant="contained" onClick={props.createNewNote}>+</Button>
+                <Button variant="contained" onClick={props.createNewNote} className={styles["sidebar--newnote-button"]}>+</Button>
              </div>
             {noteElement}
         </div>
